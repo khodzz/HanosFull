@@ -1,0 +1,35 @@
+.header__bottom {
+  padding: 15px 0 0;
+
+  &-row {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    font-size: 20px;
+
+    &-link {
+      text-decoration: none;
+      color: #333;
+
+      :hover {
+        color: #57004e;
+        text-decoration: underline 1px solid #57004e;
+      }
+    }
+
+    &-link:nth-child(1) {
+      color: red;
+      :hover {
+        color: red;
+        text-decoration: underline 1px solid red;
+      }
+    }
+  }
+
+  &-line {
+    height: 3px;
+    background-color: #333;
+    opacity: 0.1;
+    margin: 10px 0 15px;
+  }
+}

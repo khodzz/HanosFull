@@ -1,3 +1,131 @@
+@use "../../styles/media.scss" as *;
+
 .register {
-  padding: 60px 0 80px;
+  padding: 15px 0 80px;
+  display: flex;
+  justify-content: space-between;
+
+  &__empty {
+    width: 49%;
+    border-left: 2px solid #666666;
+    opacity: 0.4;
+  }
+
+  &__here {
+    font-size: 16px;
+    color: #333333;
+    margin-bottom: 15px;
+
+    &-link {
+      margin: 0 5px 0 3px;
+      color: #57004e;
+      text-decoration: 0;
+      border-bottom: 1px solid transparent;
+
+      &:hover {
+        border-bottom: 2px solid #57004e;
+      }
+    }
+  }
+
+  h1 {
+    font-size: 36px;
+    font-weight: 400;
+    margin-bottom: 15px;
+  }
+
+  h4 {
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 7px;
+  }
+
+  &__form {
+    margin-left: 80px;
+    &-desc {
+      font-size: 16px;
+      color: #666666;
+      margin-bottom: 35px;
+    }
+    &-label {
+      font-size: 24px;
+      font-weight: 400;
+      margin: 20px 0 0px;
+    }
+
+    &-inputs {
+      position: relative;
+
+      &-icons-email {
+        position: absolute;
+        top: 5px;
+        left: 10px;
+        font-size: 25px;
+      }
+      &-icons-password {
+        position: absolute;
+        top: 5px;
+        left: 10px;
+        font-size: 25px;
+      }
+      &-icons-hide {
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        font-size: 25px;
+      }
+      &-icons-show {
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        font-size: 25px;
+      }
+    }
+
+    &-input {
+      width: 100%;
+      height: 35px;
+      padding-left: 45px;
+      font-size: 16px;
+      outline: none;
+      border-radius: 5px;
+      border: 1px solid #333333;
+
+      &:focus {
+        outline: 0.5px solid #57004e;
+        opacity: 1;
+      }
+
+      &-error {
+        margin: 10px 0;
+        color: red;
+      }
+    }
+    &-signin-btn {
+      padding: 15px 25px;
+      margin-right: 30px;
+      margin-top: 20px;
+      background-color: #57004e;
+      border: 0;
+      cursor: pointer;
+      border-radius: 5px;
+      color: #fff;
+      font-weight: 400;
+      font-size: 16px;
+
+      &:hover {
+        background-color: #78006c;
+      }
+    }
+
+    &-forgot-password {
+      padding: 15px 25px;
+      background: transparent;
+      border: none;
+      color: #333;
+      font-weight: 400;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  }
 }
