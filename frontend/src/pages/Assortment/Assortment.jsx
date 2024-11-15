@@ -11,15 +11,15 @@ const Assortment = () => {
     dispatch(getAllProducts());
   }, [dispatch]);
 
-  if (status === "loading") {
-    return <p>Loading...</p>;
-  }
-
-  if (status === "failed") {
-    return <p>Error: {error}</p>;
-  }
-
-  return <div></div>;
+  return (
+    <div>
+      {data.map((item) => (
+        <div key={item.id}>
+          <h2>{item.title}</h2>
+        </div>
+      ))}
+    </div>
+  );
 };
 
 export default Assortment;
