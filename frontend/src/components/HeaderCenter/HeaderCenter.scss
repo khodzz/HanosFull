@@ -1,0 +1,95 @@
+.header__center {
+  background: rgb(87, 0, 78);
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 12;
+
+  .container {
+    display: flex;
+    align-items: center;
+  }
+  &-left {
+    &-logo {
+      width: 200px;
+      height: 50px;
+      cursor: pointer;
+    }
+  }
+
+  &-center {
+    margin: 0 200px 0 70px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    &-icon {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+    }
+    &-input {
+      height: 40px;
+      width: 470px;
+      padding-left: 35px;
+      font-size: 18px;
+      font-weight: 400;
+      font-family: "Roboto Condensed";
+      font-style: italic;
+      outline: 1px rgb(62, 0, 55);
+      border: 0;
+      border-radius: 5px 0 0 5px;
+      color: #999;
+    }
+
+    &-button {
+      height: 40px;
+      width: 70px;
+      border: 0;
+      border-radius: 0px 5px 5px 0px;
+      background: rgb(240, 173, 78);
+      color: #ffffff;
+      font-size: 18px;
+      font-weight: 500;
+      cursor: pointer;
+      font-family: "Roboto Condensed";
+    }
+  }
+
+  &-right {
+    display: flex;
+    align-items: center;
+    padding-right: 50px;
+
+    &-place {
+      width: 38px;
+      height: 40px;
+      object-fit: contain;
+      margin-right: 20px;
+      cursor: pointer;
+    }
+
+    &-text {
+      font-family: "Roboto Condensed";
+      cursor: pointer;
+
+      &-first {
+        font-weight: 700;
+        color: #ffffff;
+
+        &:hover {
+          text-decoration: underline 1px solid #ffffff;
+        }
+      }
+      &-second {
+        font-weight: 400;
+        color: #ffffff;
+        white-space: nowrap;
+        opacity: 0.8;
+
+        &:hover {
+          text-decoration: underline 1px solid #ffffff;
+        }
+      }
+    }
+  }
+}

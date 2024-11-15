@@ -1,0 +1,61 @@
+@use "../../styles/media.scss" as *;
+
+.footer {
+  background: rgb(87, 0, 78);
+  padding: 40px 0;
+
+  &__primary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &-text {
+      color: #fff;
+      font-size: 18px;
+      font-weight: 700;
+      font-family: "Roboto Condensed";
+      margin-bottom: 10px;
+    }
+
+    &-link {
+      color: #fff;
+      text-decoration: none;
+      font-family: "Roboto Condensed";
+      font-weight: 300;
+      border-bottom: 2px solid transparent;
+
+      &:hover {
+        border-bottom: 2px solid #fff;
+      }
+    }
+  }
+
+  &__social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    gap: 50px;
+  }
+
+  &__secondary {
+    padding: 40px 0;
+    text-align: center;
+
+    img {
+      margin-bottom: 30px;
+    }
+
+    &-links {
+      font-family: "Roboto Condensed";
+      text-decoration: none;
+      color: #333;
+      margin-right: 15px;
+      border-bottom: 1px solid transparent;
+
+      &:hover {
+        border-bottom: 1px solid #333;
+      }
+    }
+  }
+}

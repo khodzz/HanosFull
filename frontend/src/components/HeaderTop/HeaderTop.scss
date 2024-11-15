@@ -1,0 +1,43 @@
+@use "../../styles/media.scss" as *;
+
+.header {
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Roboto Condensed", sans-serif;
+    padding: 8px 0;
+    color: rgb(51, 51, 51);
+
+    &-login-link {
+      text-decoration: none;
+    }
+
+    &-arrow {
+      width: 10px;
+      height: 10px;
+      margin-top: 7px;
+    }
+    &-left {
+      display: flex;
+      gap: 20px;
+    }
+
+    &-right {
+      display: flex;
+      gap: 30px;
+
+      div {
+        color: rgb(51, 51, 51);
+        display: flex;
+        gap: 5px;
+        cursor: pointer;
+        border-bottom: 2px solid transparent;
+
+        &:hover {
+          border-bottom: 2px solid #333;
+        }
+      }
+    }
+  }
+}
