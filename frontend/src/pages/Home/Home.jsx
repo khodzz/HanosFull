@@ -4,7 +4,11 @@ import Assortment from "../Assortment/Assortment";
 const Home = () => {
   return (
     <div>
+      <div className="container">
+      <Assortment />  
       <Assortment />
+      </div>
+      
     </div>
   );
 };
