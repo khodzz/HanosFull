@@ -1,36 +1,55 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllProducts } from "../../store/reducers/products/products";
 import { Link } from "react-router-dom";
 import "./Assortment.scss";
+import { MdFavoriteBorder } from "react-icons/md";
+import { MdOutlineFavorite } from "react-icons/md";
 
 const Assortment = () => {
   const { data, status, error } = useSelector((state) => state.products);
   const dispatch = useDispatch();
+  const [visibleCount, setVisibleCount] = useState(4);
 
   useEffect(() => {
     dispatch(getAllProducts());
   }, [dispatch]);
 
-  return (
-    <div className="Assortment">
-      {data.map((item) => (
-        <a href="#">
-          <div className="Assortment__cart" key={item.id}>
-          <img
-            className="Assortment__cart_image"
-            src={item.image}
-            alt="ПОСТЕР ВРЕМЕННО ОТСУТСВУЕТ"
-          />
-          <h2 className="Assortment__cart_title">{item.title}</h2>
-          <a href="" className="Assortment__cart_cotegory">{item.category}</a>
-          <p className="Assortment__cart_subtitle">{item.description}</p>
+  const loadMore = () => {
+    setVisibleCount((prevCount) => prevCount + 4);
+  };
 
-          <p className="Assortment__cart_price">{item.price} $</p>
+  return (
+    <div className="assortment">
+      <div className="container">
+        <div className="assortment__primary">
+          {data.slice(0, visibleCount).map((item) => (
+            <div key={item.id} className="assortment__primary-items">
+              <MdFavoriteBorder className="assortment__primary-icons" />
+              <MdOutlineFavorite className="assortment__primary-icons" />
+              <Link>
+                <img
+                  className="assortment__primary-image"
+                  src={item.image}
+                  alt="image"
+                />
+              </Link>
+              <Link>
+                <h2 className="assortment__primary-title">{item.title}</h2>
+              </Link>
+              <Link>
+                <p className="assortment__primary-desc">{item.description}</p>
+              </Link>
+              <p className="assortment__primary-price">{item.price} Euro</p>
+            </div>
+          ))}
         </div>
-        </a>
-        
-      ))}
+        {visibleCount < data.length && (
+          <button onClick={loadMore} className="assortment__load-more">
+            Load More
+          </button>
+        )}
+      </div>
     </div>
   );
 };

@@ -1,11 +1,16 @@
 .header__bottom {
   padding: 15px 0 0;
+  position: sticky;
+  top: 90px;
+  z-index: 12;
+  background-color: white;
 
   &-row {
     display: flex;
     justify-content: space-between;
     font-weight: 600;
     font-size: 20px;
+    padding-bottom: 10px;
 
     &-link {
       text-decoration: none;

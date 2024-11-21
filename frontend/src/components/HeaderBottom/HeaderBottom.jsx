@@ -1,13 +1,14 @@
 import React from "react";
 import "./HeaderBottom.scss";
 import { Link } from "react-router-dom";
+import Promotions from "../../pages/Promotions/Promotions";
 
 const HeaderBottom = () => {
   return (
     <div className="header__bottom">
       <div className="container">
         <div className="header__bottom-row">
-          <Link className="header__bottom-row-link">
+          <Link to="/promotions" className="header__bottom-row-link">
             <p>Promotions</p>
           </Link>
           <Link className="header__bottom-row-link">

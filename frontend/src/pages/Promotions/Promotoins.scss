@@ -1,0 +1,61 @@
+.Promotions {
+    padding: 20px 0;
+  
+    &__primary {
+      display: flex;
+      flex-wrap: wrap;
+      column-gap: 20px;
+  
+      &-items {
+        margin-bottom: 20px;
+        width: 23.5%;
+        border: 1px solid #dddddd;
+        position: relative;
+        flex-direction: column;
+        height: 320px;
+      }
+  
+      &-image {
+        width: 100%;
+        height: 60%;
+        padding: 0;
+        object-fit: contain;
+      }
+  
+      &-title {
+        padding: 10px 0 5px 25px;
+        font-size: 28px;
+        display: inline-block;
+      }
+  
+      &-desc {
+        padding: 10px 0 5px 25px;
+        font-size: 20px;
+        display: inline-block;
+      }
+  
+      &-price {
+        padding: 0px 0 0 25px;
+        font-size: 20px;
+        display: inline-block;
+      }
+  
+      &-icons {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 25px;
+        color: red;
+      }
+    }
+    &__load-more {
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 10px 50px;
+      background: rgb(87, 0, 78);
+      color: #ffffff;
+      border: 0;
+    }
+  }
+  

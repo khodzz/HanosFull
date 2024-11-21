@@ -4,6 +4,7 @@ import Root from "../components/Root/Root";
 import Home from "../pages/Home/Home";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
+import Promotions from "../pages/Promotions/Promotions";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
         path: "register",
         element: <Register />,
       },
+      {
+        path: "promotions",
+        element:<Promotions/>
+      }
     ],
   },
 ]);

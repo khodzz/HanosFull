@@ -24,8 +24,13 @@ const products = createSlice({
     data: [],
     status: "idle",
     error: null,
+    filter:{
+      filterPrice:'default'
+    }
   },
-  reducers: {},
+  reducers: {
+    
+  },
   extraReducers: (builder) => {
     builder
       .addCase(getAllProducts.pending, (state) => {

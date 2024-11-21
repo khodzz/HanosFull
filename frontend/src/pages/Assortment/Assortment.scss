@@ -1,46 +1,60 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-.Assortment{
-    display: grid;
-    grid-template-columns: repeat(6,14fr);
-    gap: 20px;
-    height: 390px;
-    overflow: hidden;
-    &__container{
-        display: flex;
-        justify-content: space-between;
+.assortment {
+  padding: 20px 0;
+
+  &__primary {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 20px;
+
+    &-items {
+      margin-bottom: 20px;
+      width: 23.5%;
+      border: 1px solid #dddddd;
+      position: relative;
+      flex-direction: column;
+      height: 320px;
     }
-    &__cart{
-        width: 100%;
-        height: 380px;
-        display: flex;
-        flex-direction: column;
-        gap: 14px;
-        border: 0.7px solid #9b9999;
-        border-radius: 10px;
-        padding: 5px;
-        &_image{
-            width: 90%;
-            height: 140px;
-            position:relative;
-            left: 50%;
-            transform: translate(-50%);
-        }
-        &_title{
-            font-size: 24px;
-        }
-        &_cotegory{
-            font-size: 18px;
-        }
-        &_subtitle{
-            font-size: 20px;
-        }
-        &_price{
-            font-size: 26px;
-            font-weight: 700;
-        }
+
+    &-image {
+      width: 100%;
+      height: 60%;
+      padding: 0;
+      object-fit: contain;
     }
+
+    &-title {
+      padding: 10px 0 5px 25px;
+      font-size: 28px;
+      display: inline-block;
+    }
+
+    &-desc {
+      padding: 10px 0 5px 25px;
+      font-size: 20px;
+      display: inline-block;
+    }
+
+    &-price {
+      padding: 0px 0 0 25px;
+      font-size: 20px;
+      display: inline-block;
+    }
+
+    &-icons {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 25px;
+      color: red;
+    }
+  }
+  &__load-more {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 50px;
+    background: rgb(87, 0, 78);
+    color: #ffffff;
+    border: 0;
+  }
 }
