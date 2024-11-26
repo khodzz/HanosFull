@@ -37,9 +37,11 @@ const Assortment = () => {
               <Link>
                 <h2 className="assortment__primary-title">{item.title}</h2>
               </Link>
+              <br />
               <Link>
                 <p className="assortment__primary-desc">{item.description}</p>
               </Link>
+              <br />
               <p className="assortment__primary-price">{item.price} Euro</p>
             </div>
           ))}
