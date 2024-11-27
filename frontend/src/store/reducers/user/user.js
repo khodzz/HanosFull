@@ -18,6 +18,8 @@ export const registerUser = createAsyncThunk(
   }
 );
 
+``;
+
 const user = createSlice({
   name: "user",
   initialState: {
@@ -25,7 +27,11 @@ const user = createSlice({
     status: "idle",
     error: null,
   },
-  reducers: {},
+  reducers: {
+    logOut: (state, action) => {
+      (state.user = null), (state.status = "idle"), (state.error = null);
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(registerUser.pending, (state, action) => {
@@ -43,4 +49,5 @@ const user = createSlice({
   },
 });
 
+export const { logOut } = user.actions;
 export default user.reducer;

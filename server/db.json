@@ -1,5 +1,41 @@
 {
-  "users": [],
+  "users": [
+    {
+      "email": "asdasdasd@gmail.com",
+      "password": "$2a$10$2qQJ3xwvi/Bwt1cB9wwf0OeEA1Dc8RBUQNAW4ly7XqlkceSrO7RVu",
+      "id": 1
+    },
+    {
+      "email": "asdasd@gmail.com",
+      "password": "$2a$10$llfTh1SbB.XIzLoSozz5KeGxQcHmNw5/PAp8NJuSlosGa/t.nYVq2",
+      "id": 2
+    },
+    {
+      "email": "asdaaaasdasd@gmail.com",
+      "password": "$2a$10$EJ7r/now7f5pxyH1vYoj.eqbADpeLZ6xD7GpQshO78VeQcUPnk3Ca",
+      "id": 3
+    },
+    {
+      "email": "qweqweqweqwe@gmail.com",
+      "password": "$2a$10$eL5FoMR1vyuaIeKvjZtESuk8WqWXOTMxoDGif0TFB8SfKbUN7mSEO",
+      "id": 4
+    },
+    {
+      "email": "agariosn1212owman2@gmail.com",
+      "password": "$2a$10$ncZKpls59iStKVbQPYYRle5AWw1j.vJoLVQeMPPyu.2oGj.yx1hKi",
+      "id": 5
+    },
+    {
+      "email": "fenikskryt11qweqwe1@gmail.com",
+      "password": "$2a$10$oQ1vEZ.46XhtHbl.yNMGX.3qnw1RtUqX.d8G1Ab37inBE3M5JUz.C",
+      "id": 6
+    },
+    {
+      "email": "asdasdasdasd@gmail.com",
+      "password": "$2a$10$hmosrV8FYc7wLqbJRkOHT.Hc4UcBxQugpBPZlFwdqdmpFMR7wwSeO",
+      "id": 7
+    }
+  ],
   "posts": [
     {
       "image": "https://i.postimg.cc/2yj1mC0b/6989677-2.webp"

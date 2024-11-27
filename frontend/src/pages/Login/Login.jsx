@@ -7,6 +7,16 @@ import { FaRegEye } from "react-icons/fa";
 import { FaRegEyeSlash } from "react-icons/fa";
 
 const Login = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({ mode: "onBlur" });
+
+  const dispatch = useDispatch();
+
+  const submitForm = (data) => {};
+
   return (
     <div className="login">
       <div className="container">
@@ -19,7 +29,7 @@ const Login = () => {
             <span>&gt; Войти в аккаунт</span>
           </p>
         </div>
-        <form className="login__form">
+        <form className="login__form" onSubmit={handleSubmit(submitForm)}>
           <h1>Войти в аккаунт</h1>
           <h4>
             У вас уже есть аккаунт? <br /> Войдите, чтобы получить настройки
