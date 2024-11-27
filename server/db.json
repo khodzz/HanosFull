@@ -1,5 +1,11 @@
 {
-  "users": [],
+  "users": [
+    {
+      "email": "alchst@gmail.com",
+      "password": "$2a$10$VAWr7DIyUWp8V8ud//HPUeuQ5TRi/4T7sJ3COxVd3HysjIrEhfIDy",
+      "id": 1
+    }
+  ],
   "posts": [
     {
       "image": "https://i.postimg.cc/2yj1mC0b/6989677-2.webp"
