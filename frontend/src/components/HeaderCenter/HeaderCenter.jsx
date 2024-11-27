@@ -2,8 +2,13 @@ import React from "react";
 import { assets } from "../../assets/assets";
 import "./HeaderCenter.scss";
 import { Link } from "react-router-dom";
+import { logOut } from "../../store/reducers/user/user";
+import { useDispatch, useSelector } from "react-redux";
 
 const HeaderCenter = () => {
+  const dispatch = useDispatch();
+  const { user, status, error } = useSelector((s) => s.user);
+
   return (
     <>
       <div className="header__center">
@@ -49,13 +54,19 @@ const HeaderCenter = () => {
               src={assets.loginPerson}
               alt=""
             />
-            <Link to="/register">
-              <div className="header__center-right-text">
-                <h3 className="header__center-right-text-first">
-                  Стать покупателем!
-                </h3>
-              </div>
-            </Link>
+            {status === "succeeded" ? (
+              <button onClick={() => dispatch(logOut())}>
+                Выйти с аккаунта
+              </button>
+            ) : (
+              <Link to="/register">
+                <div className="header__center-right-text">
+                  <h3 className="header__center-right-text-first">
+                    Стать покупателем!
+                  </h3>
+                </div>
+              </Link>
+            )}
           </div>
         </div>
       </div>
@@ -64,3 +75,5 @@ const HeaderCenter = () => {
 };
 
 export default HeaderCenter;
+
+// user.status === "succeeded" &&

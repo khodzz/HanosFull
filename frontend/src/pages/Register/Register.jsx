@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import "./Register.scss";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { MdOutlineEmail } from "react-icons/md";
 import { RiLockPasswordLine } from "react-icons/ri";
 import { FaRegEye } from "react-icons/fa";
 import { FaRegEyeSlash } from "react-icons/fa";
 import { useForm } from "react-hook-form";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { registerUser } from "../../store/reducers/user/user";
 
 const Register = () => {
@@ -15,6 +15,8 @@ const Register = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const [isConfirmPasswordVisible, setIsConfirmPasswordVisible] =
     useState(false);
+
+  const { user, status, error } = useSelector((s) => s.user);
 
   const {
     register,
@@ -29,6 +31,10 @@ const Register = () => {
 
     dispatch(registerUser(other));
   };
+
+  if (status === "succeeded") {
+    return <Navigate to="/" />;
+  }
 
   return (
     <section className="register">
