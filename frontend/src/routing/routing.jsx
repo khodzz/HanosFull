@@ -4,11 +4,8 @@ import Root from "../components/Root/Root";
 import Home from "../pages/Home/Home";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
-<<<<<<< HEAD
 import Promotions from "../pages/Promotions/Promotions";
-=======
 import PersonalPage from "../pages/PersonalPage/PersonalPage";
->>>>>>> 68591d6b067929a52f914b07fcb4545d6112591c
 
 const router = createBrowserRouter([
   {
@@ -32,15 +29,13 @@ const router = createBrowserRouter([
         element: <Register />,
       },
       {
-<<<<<<< HEAD
         path: "promotions",
-        element:<Promotions/>
-      }
-=======
+        element: <Promotions />,
+      },
+      {
         path: "personalPage",
         element: <PersonalPage />,
       },
->>>>>>> 68591d6b067929a52f914b07fcb4545d6112591c
     ],
   },
 ]);
