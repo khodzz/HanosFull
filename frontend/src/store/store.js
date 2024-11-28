@@ -1,16 +1,16 @@
 import { configureStore } from "@reduxjs/toolkit";
 import user from "./reducers/user/user";
-import favorites from "./reducers/favorites/favorites";
 import products from "./reducers/products/products";
+// import carts from "./reducers/carts/carts";
 import { rememberEnhancer, rememberReducer } from "redux-remember";
 
-const rememberedKeys = ["user", "favorites", "products"];
+const rememberedKeys = ["user", "products", "carts"];
 
 const store = configureStore({
   reducer: rememberReducer({
     user,
-    favorites,
     products,
+    // carts,
   }),
   enhancers: (getDefaultEnhancers) =>
     getDefaultEnhancers().concat(

@@ -32,7 +32,7 @@ const Register = () => {
     dispatch(registerUser(other));
   };
 
-  if (status === "succeeded") {
+  if (status === "success") {
     return <Navigate to="/" />;
   }
 

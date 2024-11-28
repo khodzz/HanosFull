@@ -3,13 +3,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { getAllProducts } from "../../store/reducers/products/products";
 import { Link } from "react-router-dom";
 import "./Assortment.scss";
-import { MdFavoriteBorder } from "react-icons/md";
-import { MdOutlineFavorite } from "react-icons/md";
+import { MdOutlineShoppingCart } from "react-icons/md";
+import { MdOutlineRemoveShoppingCart } from "react-icons/md";
 
 const Assortment = () => {
   const { data, status, error } = useSelector((state) => state.products);
   const dispatch = useDispatch();
   const [visibleCount, setVisibleCount] = useState(4);
+
+  const [cart, setCart] = useState({});
 
   useEffect(() => {
     dispatch(getAllProducts());
@@ -19,14 +21,30 @@ const Assortment = () => {
     setVisibleCount((prevCount) => prevCount + 4);
   };
 
+  const toggleCart = (id) => {
+    setCart((prevFavorites) => ({
+      ...prevFavorites,
+      [id]: !prevFavorites[id],
+    }));
+  };
+
   return (
     <div className="assortment">
       <div className="container">
         <div className="assortment__primary">
           {data.slice(0, visibleCount).map((item) => (
             <div key={item.id} className="assortment__primary-items">
-              <MdFavoriteBorder className="assortment__primary-icons" />
-              <MdOutlineFavorite className="assortment__primary-icons" />
+              {cart[item.id] ? (
+                <MdOutlineRemoveShoppingCart
+                  onClick={() => toggleCart(item.id)}
+                  className="assortment__primary-icons"
+                />
+              ) : (
+                <MdOutlineShoppingCart
+                  onClick={() => toggleCart(item.id)}
+                  className="assortment__primary-icons"
+                />
+              )}
               <Link>
                 <img
                   className="assortment__primary-image"

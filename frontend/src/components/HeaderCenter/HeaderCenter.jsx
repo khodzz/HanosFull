@@ -4,6 +4,7 @@ import "./HeaderCenter.scss";
 import { Link } from "react-router-dom";
 import { logOut } from "../../store/reducers/user/user";
 import { useDispatch, useSelector } from "react-redux";
+import { IoExitOutline } from "react-icons/io5";
 
 const HeaderCenter = () => {
   const dispatch = useDispatch();
@@ -49,14 +50,21 @@ const HeaderCenter = () => {
             </div>
           </div>
           <div className="header__center-right">
-            <img
-              className="header__center-right-place"
-              src={assets.loginPerson}
-              alt=""
-            />
-            {status === "succeeded" ? (
-              <button onClick={() => dispatch(logOut())}>
-                Выйти с аккаунта
+            {status === "success" ? (
+              <IoExitOutline style={{ fontSize: 40, color: "#fff" }} />
+            ) : (
+              <img
+                className="header__center-right-place"
+                src={assets.loginPerson}
+                alt=""
+              />
+            )}
+            {status === "success" ? (
+              <button
+                className="header__center-right-btn"
+                onClick={() => dispatch(logOut())}
+              >
+                Выйти с <br /> аккаунта
               </button>
             ) : (
               <Link to="/register">
