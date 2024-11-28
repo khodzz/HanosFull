@@ -1,3 +1,5 @@
+@import "../../styles/media.scss";
+
 .header__center {
   background: rgb(87, 0, 78);
   padding: 20px 0;
@@ -91,5 +93,11 @@
         }
       }
     }
+  }
+}
+
+@include respond-to-mobile{
+  .header__center{
+    display: none;
   }
 }

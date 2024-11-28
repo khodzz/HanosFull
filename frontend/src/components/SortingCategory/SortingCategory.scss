@@ -1,0 +1,32 @@
+.sorting{
+    max-width: 40%;
+    
+    &__title{
+        font-size: 40px;
+        margin-bottom: 60px;
+    }
+    &__ul{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    &__button{
+        width: 100%;
+        font-size: 35px;
+        text-align: left;
+        background: none;
+        border: none;
+        &:hover{
+            color: rgb(87, 0, 78);
+            text-decoration: underline;
+        }
+        &_active{
+            width: 100%;
+            font-size: 35px;
+            text-align: left;
+            background: none;
+            border: none;
+            color: rgb(87, 0, 78);
+        }
+    }
+}
