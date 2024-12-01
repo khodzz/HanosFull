@@ -5,11 +5,14 @@ import { Link } from "react-router-dom";
 import "./Assortment.scss";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { MdOutlineRemoveShoppingCart } from "react-icons/md";
+import { open } from "../../store/reducers/carts/CheckOutSlice";
+import { add, remove } from "../../store/reducers/carts/CartSlice";
 
-const Assortment = () => {
+const Assortment = ({ cartItem }) => {
   const { data, status, error } = useSelector((state) => state.products);
   const dispatch = useDispatch();
   const [visibleCount, setVisibleCount] = useState(4);
+  const cartItems = useSelector((state) => state.cart.cartItems);
 
   const [cart, setCart] = useState({});
 
@@ -34,17 +37,28 @@ const Assortment = () => {
         <div className="assortment__primary">
           {data.slice(0, visibleCount).map((item) => (
             <div key={item.id} className="assortment__primary-items">
-              {cart[item.id] ? (
-                <MdOutlineRemoveShoppingCart
-                  onClick={() => toggleCart(item.id)}
-                  className="assortment__primary-icons"
-                />
+              {cartItems.some((cartItem) => cartItem.id === item.id) ? (
+                <button
+                  onClick={() => {
+                    toggleCart(item.id);
+                    dispatch(remove({ id: item.id }));
+                  }}
+                  className="assortment__primary-button"
+                >
+                  Убрать с корзины
+                </button>
               ) : (
-                <MdOutlineShoppingCart
-                  onClick={() => toggleCart(item.id)}
-                  className="assortment__primary-icons"
-                />
+                <button
+                  onClick={() => {
+                    dispatch(add(item));
+                    toggleCart(item.id);
+                  }}
+                  className="assortment__primary-button"
+                >
+                  В корзину
+                </button>
               )}
+
               <Link>
                 <img
                   className="assortment__primary-image"

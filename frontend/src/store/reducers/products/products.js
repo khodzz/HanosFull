@@ -24,20 +24,18 @@ const products = createSlice({
     data: [],
     status: "idle",
     error: null,
-    filter:{
-      filterPrice:'default'
-    }
+    filter: {
+      filterPrice: "default",
+    },
   },
-  reducers: {
-    
-  },
+  reducers: {},
   extraReducers: (builder) => {
     builder
       .addCase(getAllProducts.pending, (state) => {
         state.status = "loading";
       })
       .addCase(getAllProducts.fulfilled, (state, action) => {
-        state.status = "succeeded";
+        state.status = "success";
         state.data = action.payload;
       })
       .addCase(getAllProducts.rejected, (state, action) => {
