@@ -1,0 +1,113 @@
+
+.home{
+    &__imges{
+        display: flex;
+        gap: 20px;
+    }
+    &__home-big-img{
+        width: 945px;
+        border-radius: 10px ;
+        cursor: pointer;
+    }
+    &__right_img{
+        height: 465px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    &__home-small-img{
+        width: 476px;
+        height: 220px;
+        border-radius: 10px ;
+        cursor: pointer;
+    }
+    &__title-btn{
+        display: flex;
+        justify-content: space-between;
+        margin: 40px 0 20px;
+    }
+    &__title{
+        font-weight: 400;
+    }
+    &__btn{
+        background: none;
+        border: none;
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+    }
+    &__row{
+        margin: 40px 0 ;
+        width: 100%;
+        display: flex;
+        gap: 10px;
+    }
+    &__col{
+        width:33.3% ;
+        height: 200px;
+        background: #F2EBF1;
+        display: flex;
+        justify-content: space-between;
+        padding:20px;
+        border-radius: 7px;
+        &:hover{
+            text-decoration: underline;
+        }
+        &:nth-child(2){
+            background: #F2F8EB;
+        }
+        &:nth-child(3){
+            background: #f4f4f4;
+        }
+    }
+    &__col-title-btn{
+        display: flex;
+        flex-direction: column ;
+        justify-content: space-between;
+        align-items: start;
+    }
+    &__col-title{
+        font-weight: 400;
+    }
+    &__col-btn{
+        background: none;
+        border: none;
+        font-size: 18px;
+    }
+    &__col-img{
+        width: 150px;
+        height: 170px;
+    }
+    &__article{
+        display: flex;
+        gap: 20px;
+        
+    }
+    
+    &__article-img{
+        width: 600px;
+        border-radius: 10px;
+    }
+    &__article-right{
+        display: flex;
+        flex-direction: column;
+    }
+    &__article-right-title{
+        font-weight: 400;
+        font-size: 30px;
+    }
+    &__article-right-subtitle{
+        font-weight: 300;
+        font-size: 25px;
+    }
+    &__article-right-btn{
+        font-size: 22px;
+        width: 225px;
+        height: 50px;
+        background: #57004E;
+        border-radius: 10px;
+        border: none;
+        color: #F2F8EB;
+        margin-top: 60px;
+    }
+}

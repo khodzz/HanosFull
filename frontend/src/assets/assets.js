@@ -13,6 +13,14 @@ import pinterestIcon from "./pinterestIcon.svg";
 import linkedinIcon from "./linkedinIcon.svg";
 import youtubeIcon from "./youtubeIcon.svg";
 import footerLogo from "./hanosFooterLogo.svg";
+import homeBig from "./homeBig.jpg"
+import homeSmallOne from "./homeSmallOne.png"
+import homeSmalltwo from "./homeSmalltwo.png"
+import homePageImg1 from "./homePageImg.png"
+import homePageImg2 from "./homePageImg2.png"
+import homePageImg3 from "./homePageImg3.png"
+import article1 from "./article1.jpg"
+import article2 from "./article2.jpg"
 
 export const assets = {
   ArrowSelectLang,
@@ -30,4 +38,12 @@ export const assets = {
   linkedinIcon,
   youtubeIcon,
   footerLogo,
+  homeBig,
+  homeSmallOne,
+  homeSmalltwo,
+  homePageImg1,
+  homePageImg2,
+  homePageImg3,
+  article1,
+  article2
 };

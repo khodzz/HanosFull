@@ -8,7 +8,7 @@
 
     &-items {
       margin-bottom: 20px;
-      width: 23.5%;
+      width: 23.95%;
       border: 1px solid #dddddd;
       position: relative;
       flex-direction: column;
@@ -25,19 +25,19 @@
     &-title {
       padding: 10px 0 5px 25px;
       font-size: 28px;
-      display: inline-block;
+      display:block;
     }
 
     &-desc {
       padding: 10px 0 5px 25px;
       font-size: 20px;
-      display: inline-block;
+      display:block;
     }
 
     &-price {
       padding: 0px 0 0 25px;
       font-size: 20px;
-      display: inline-block;
+      display: block;
     }
 
     &-icons {
@@ -56,5 +56,6 @@
     background: rgb(87, 0, 78);
     color: #ffffff;
     border: 0;
+    border-radius: 10px;
   }
 }
