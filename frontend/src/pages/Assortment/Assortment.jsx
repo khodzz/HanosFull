@@ -3,19 +3,23 @@ import { useDispatch, useSelector } from "react-redux";
 import { getAllProducts } from "../../store/reducers/products/products";
 import { Link } from "react-router-dom";
 import "./Assortment.scss";
-import { MdOutlineShoppingCart } from "react-icons/md";
-import { MdOutlineRemoveShoppingCart } from "react-icons/md";
+import { add, remove } from "../../store/reducers/carts/CartSlice";
 
-const Assortment = () => {
+const Assortment = ({ cartItem }) => {
   const { data, status, error } = useSelector((state) => state.products);
-  const dispatch = useDispatch();
   const [visibleCount, setVisibleCount] = useState(4);
-
+  const cartItems = useSelector((state) => state.cart.cartItems);
   const [cart, setCart] = useState({});
+  const dispatch = useDispatch();
 
+  const searchTerm = useSelector((state) => state.search.searchTerm);
   useEffect(() => {
     dispatch(getAllProducts());
   }, [dispatch]);
+
+  const filteredData = data.filter((item) =>
+    item.title.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   const loadMore = () => {
     setVisibleCount((prevCount) => prevCount + 4);
@@ -32,19 +36,24 @@ const Assortment = () => {
     <div className="assortment">
       <div className="container">
         <div className="assortment__primary">
-          {data.slice(0, visibleCount).map((item) => (
+          {filteredData.slice(0, visibleCount).map((item) => (
             <div key={item.id} className="assortment__primary-items">
-              {cart[item.id] ? (
-                <MdOutlineRemoveShoppingCart
-                  onClick={() => toggleCart(item.id)}
-                  className="assortment__primary-icons"
-                />
+              {cartItems.some((cartItem) => cartItem.id === item.id) ? (
+                <button
+                  onClick={() => dispatch(remove({ id: item.id }))}
+                  className="assortment__primary-button"
+                >
+                  Убрать с корзины
+                </button>
               ) : (
-                <MdOutlineShoppingCart
-                  onClick={() => toggleCart(item.id)}
-                  className="assortment__primary-icons"
-                />
+                <button
+                  onClick={() => dispatch(add(item))}
+                  className="assortment__primary-button"
+                >
+                  В корзину
+                </button>
               )}
+
               <Link>
                 <img
                   className="assortment__primary-image"
@@ -64,7 +73,7 @@ const Assortment = () => {
             </div>
           ))}
         </div>
-        {visibleCount < data.length && (
+        {visibleCount < filteredData.length && (
           <button onClick={loadMore} className="assortment__load-more">
             Load More
           </button>

@@ -12,7 +12,7 @@
       border: 1px solid #dddddd;
       position: relative;
       flex-direction: column;
-      height: 320px;
+      height: 390px;
     }
 
     &-image {
@@ -40,13 +40,15 @@
       display: block;
     }
 
-    &-icons {
+    &-button {
       position: absolute;
-      top: 20px;
+      bottom: 20px;
       right: 20px;
-      font-size: 25px;
-      color: #333;
-      cursor: pointer;
+      background: rgb(87, 0, 78);
+      border: 0;
+      color: #ffffff;
+      padding: 10px;
+      border-radius: 5px;
     }
   }
   &__load-more {

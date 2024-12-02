@@ -31,7 +31,7 @@ const HeadertTop = () => {
               <Link className="header__top-login-link" to="/login">
                 <div>
                   <img src={assets.Login} alt="" />
-                  <p className="header__top-login">Зайти в аккаунт</p>
+                  <p className="header__top-login">Войти в аккаунт</p>
                 </div>
               </Link>
             )}

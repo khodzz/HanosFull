@@ -41,9 +41,8 @@
   }
 }
 
-
-@include respond-to-mobile{
-    .header__bottom{
-      display: none;
-    }
+@include respond-to-mobile {
+  .header__bottom {
+    display: none;
+  }
 }

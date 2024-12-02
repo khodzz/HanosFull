@@ -1,14 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import { assets } from "../../assets/assets";
 import "./HeaderCenter.scss";
 import { Link } from "react-router-dom";
 import { logOut } from "../../store/reducers/user/user";
 import { useDispatch, useSelector } from "react-redux";
 import { IoExitOutline } from "react-icons/io5";
+import { MdOutlineShoppingBag } from "react-icons/md";
+import { open } from "../../store/reducers/carts/CheckOutSlice";
+import { setSearchTerm } from "../../store/reducers/search/search";
 
 const HeaderCenter = () => {
   const dispatch = useDispatch();
+
   const { user, status, error } = useSelector((s) => s.user);
+  const { amount } = useSelector((state) => state.cart);
+
+  const handleInputChange = (e) => {
+    dispatch(setSearchTerm(e.target.value));
+  };
 
   return (
     <>
@@ -30,24 +39,26 @@ const HeaderCenter = () => {
               alt=""
             />
             <input
+              onChange={handleInputChange}
               className="header__center-center-input"
               type="text"
               placeholder="Find your product..."
             />
             <button className="header__center-center-button">Search</button>
           </div>
-          <div className="header__center-right">
-            <img
-              className="header__center-right-place"
-              src={assets.places}
-              alt=""
-            />
-            <div className="header__center-right-text">
-              <h3 className="header__center-right-text-first">Find a store</h3>
-              <p className="header__center-right-text-second">
-                Find your HANOS store
-              </p>
-            </div>
+          <div
+            className="header__center-right"
+            style={{ position: "relative" }}
+          >
+            {" "}
+            <MdOutlineShoppingBag style={{ fontSize: "45px", color: "#fff" }} />
+            <span className="header__center-right-amount">{amount}</span>
+            <button
+              className="header__center-right-text"
+              onClick={() => dispatch(open())}
+            >
+              Корзина
+            </button>
           </div>
           <div className="header__center-right">
             {status === "success" ? (
@@ -83,5 +94,3 @@ const HeaderCenter = () => {
 };
 
 export default HeaderCenter;
-
-// user.status === "succeeded" &&
