@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { assets } from "../../assets/assets";
 import "./HeaderCenter.scss";
 import { Link } from "react-router-dom";
@@ -7,11 +7,18 @@ import { useDispatch, useSelector } from "react-redux";
 import { IoExitOutline } from "react-icons/io5";
 import { MdOutlineShoppingBag } from "react-icons/md";
 import { open } from "../../store/reducers/carts/CheckOutSlice";
+import { setSearchTerm } from "../../store/reducers/search/search";
 
 const HeaderCenter = () => {
   const dispatch = useDispatch();
+
   const { user, status, error } = useSelector((s) => s.user);
   const { amount } = useSelector((state) => state.cart);
+
+  const handleInputChange = (e) => {
+    dispatch(setSearchTerm(e.target.value));
+  };
+
   return (
     <>
       <div className="header__center">
@@ -32,6 +39,7 @@ const HeaderCenter = () => {
               alt=""
             />
             <input
+              onChange={handleInputChange}
               className="header__center-center-input"
               type="text"
               placeholder="Find your product..."
@@ -86,5 +94,3 @@ const HeaderCenter = () => {
 };
 
 export default HeaderCenter;
-
-// user.status === "succeeded" &&
