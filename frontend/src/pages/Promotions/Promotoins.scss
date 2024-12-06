@@ -8,6 +8,9 @@
   display: flex;
   gap: 20px;
 }
+select {
+  border: none;
+}
 .Promotions {
   padding: 20px 0;
 
@@ -30,7 +33,7 @@
   &__primary {
     display: flex;
     flex-wrap: wrap;
-    column-gap: 10px;
+    column-gap: 30px;
 
     &-items {
       margin-bottom: 20px;

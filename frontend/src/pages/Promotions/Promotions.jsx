@@ -41,6 +41,10 @@ const Promotions = () => {
     setVisibleCount((prevCount) => prevCount + 8);
   };
 
+  const handleSortChange = (e) => {
+    setSortOrder(e.target.value); // Устанавливаем порядок сортировки
+  };
+
   return (
     <div className="Promotions">
       <div className="container cont">
@@ -53,35 +57,21 @@ const Promotions = () => {
         <div className="Promotions__cont">
           <h1 className="Promotions__title">Promotion</h1>
           <hr />
-          <div className="context">
-            <div className="Promotions__price-filter">
-              <h2 className="Promotions__price-filter_title">Sort by Price</h2>
-              <div className="Promotions__price-filter_btns">
-                <button
-                  onClick={() => setSortOrder("asc")}
-                  className={`${
-                    sortOrder === "asc"
-                      ? "active"
-                      : "Promotions__price-filter_btn"
-                  }`}
-                >
-                  Ascending
-                </button>
-                <button
-                  onClick={() => setSortOrder("desc")}
-                  className={`${
-                    sortOrder === "desc"
-                      ? "active"
-                      : "Promotions__price-filter_btn"
-                  }`}
-                >
-                  Descending
-                </button>
+
+          <div className="Promotions__filter-context">
+            <div className="context">
+              <div className="Promotions__founder">
+                {filteredProducts.length} Products Found
               </div>
             </div>
-
-            <div className="Promotions__founder">
-              {filteredProducts.length} Products Found
+            <div className="Promotions__price-filter">
+              <h2>Sort by:</h2>
+              {/* Выпадающий список для сортировки */}
+              <select value={sortOrder} onChange={handleSortChange}>
+                <option value="">Default</option>
+                <option value="asc">Ascending</option>
+                <option value="desc">Descending</option>
+              </select>
             </div>
           </div>
 
