@@ -14,6 +14,11 @@
       "email": "ali222@gmail.com",
       "password": "$2a$10$uWhh/.ac/Xxcmzl2rIIB5e2PYBkrGWj5SeEplE5LnBqOkIKCKH316",
       "id": 3
+    },
+    {
+      "email": "ibfnowene@gmail.com",
+      "password": "$2a$10$P0M9TADtip66yoPuk5nmn.hS.1r5YPLogF35WwN7V.uSJxKkV8OU2",
+      "id": 4
     }
   ],
   "posts": [
@@ -22,7 +27,6 @@
     }
   ],
   "products": [
-    
     {
       "id": 1,
       "title": "Dragon Fruit",

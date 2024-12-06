@@ -3,6 +3,7 @@ import Assortment from "../Assortment/Assortment";
 import { assets } from "../../assets/assets";
 import "./Home.scss";
 import { MdArrowRight } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -29,9 +30,9 @@ const Home = () => {
           <h1 className="home__title">
             Promotions selected by our specialists
           </h1>
-          <button className="home__btn">
-            View all Promotions <MdArrowRight />
-          </button>
+          <Link to="/promotions" className="home__btn">
+            View all Promotions <MdArrowRight style={{ fontSize: 45 }} />
+          </Link>
         </div>
         <Assortment />
         <h1 className="home__title">Highlighted</h1>
@@ -106,6 +107,9 @@ const Home = () => {
         <h3 className="home__title">Entdecken Sie einige festliche Artikel:</h3>
 
         <Assortment />
+        <Link to="/map">
+          <div className="home__link-map">Map</div>
+        </Link>
       </div>
     </div>
   );

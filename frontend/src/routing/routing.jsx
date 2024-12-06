@@ -6,6 +6,8 @@ import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import Promotions from "../pages/Promotions/Promotions";
 import PersonalPage from "../pages/PersonalPage/PersonalPage";
+import Map from "../pages/Map/Map";
+
 
 const router = createBrowserRouter([
   {
@@ -35,6 +37,10 @@ const router = createBrowserRouter([
       {
         path: "personalPage",
         element: <PersonalPage />,
+      },
+      {
+        path: "map",
+        element: <Map/> 
       },
     ],
   },

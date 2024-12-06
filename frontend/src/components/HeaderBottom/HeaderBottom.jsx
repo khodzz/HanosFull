@@ -1,12 +1,18 @@
 import React from "react";
 import "./HeaderBottom.scss";
 import { Link } from "react-router-dom";
-import Promotions from "../../pages/Promotions/Promotions";
+import { assets } from "../../assets/assets";
+import { useDispatch } from "react-redux";
+import { CiSearch } from "react-icons/ci";
 
 const HeaderBottom = () => {
+  const dispatch = useDispatch();
+  const handleInputChange = (e) => {
+    dispatch(setSearchTerm(e.target.value));
+  };
   return (
     <div className="header__bottom">
-      <div className="container">
+      <div className="container header__bottom-container">
         <div className="header__bottom-row">
           <Link to="/promotions" className="header__bottom-row-link">
             <p>Promotions</p>

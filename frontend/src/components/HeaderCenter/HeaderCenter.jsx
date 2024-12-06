@@ -23,8 +23,11 @@ const HeaderCenter = () => {
     <>
       <div className="header__center">
         <div className="container">
+
+          {/* <div className="header__burger"></div> */}
+
           <div className="header__center-left">
-            <Link to="">
+            <Link to="/home">
               <img
                 className="header__center-left-logo"
                 src={assets.logo}
@@ -48,10 +51,13 @@ const HeaderCenter = () => {
           </div>
           <div
             className="header__center-right"
-            style={{ position: "relative" }}
+            style={{ position: "relative", marginLeft: "30px" }}
           >
             {" "}
-            <MdOutlineShoppingBag style={{ fontSize: "45px", color: "#fff" }} />
+            <MdOutlineShoppingBag
+            className="header__center-right-basket"
+            style={{ fontSize: "45px", color: "#fff" }}
+            onClick={() => dispatch(open())} />
             <span className="header__center-right-amount">{amount}</span>
             <button
               className="header__center-right-text"
@@ -62,7 +68,9 @@ const HeaderCenter = () => {
           </div>
           <div className="header__center-right">
             {status === "success" ? (
-              <IoExitOutline style={{ fontSize: 40, color: "#fff" }} />
+              <IoExitOutline
+              
+              style={{ fontSize: 40, color: "#fff" }} />
             ) : (
               <img
                 className="header__center-right-place"
