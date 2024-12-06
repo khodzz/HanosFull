@@ -51,13 +51,16 @@ const HeaderCenter = () => {
             style={{ position: "relative" }}
           >
             {" "}
-            <MdOutlineShoppingBag style={{ fontSize: "45px", color: "#fff" }} />
-            <span className="header__center-right-amount">{amount}</span>
+            <MdOutlineShoppingBag
+              onClick={() => dispatch(open())}
+              style={{ fontSize: "45px", color: "#fff", cursor: "pointer" }}
+            />
             <button
               className="header__center-right-text"
               onClick={() => dispatch(open())}
             >
-              Корзина
+              <span className="header__center-right-amount">{amount}</span>
+              <h3>Корзина</h3>
             </button>
           </div>
           <div className="header__center-right">

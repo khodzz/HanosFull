@@ -5,31 +5,26 @@ import { Link } from "react-router-dom";
 import "./Assortment.scss";
 import { add, remove } from "../../store/reducers/carts/CartSlice";
 
-const Assortment = ({ cartItem }) => {
+const Assortment = () => {
   const { data, status, error } = useSelector((state) => state.products);
   const [visibleCount, setVisibleCount] = useState(4);
   const cartItems = useSelector((state) => state.cart.cartItems);
-  const [cart, setCart] = useState({});
   const dispatch = useDispatch();
 
   const searchTerm = useSelector((state) => state.search.searchTerm);
+
   useEffect(() => {
     dispatch(getAllProducts());
   }, [dispatch]);
 
   const filteredData = data.filter((item) =>
-    item.title.toLowerCase().includes(searchTerm.toLowerCase())
+    (item.title ? item.title.toLowerCase() : "").includes(
+      searchTerm.toLowerCase()
+    )
   );
 
   const loadMore = () => {
     setVisibleCount((prevCount) => prevCount + 4);
-  };
-
-  const toggleCart = (id) => {
-    setCart((prevFavorites) => ({
-      ...prevFavorites,
-      [id]: !prevFavorites[id],
-    }));
   };
 
   return (
@@ -54,18 +49,18 @@ const Assortment = ({ cartItem }) => {
                 </button>
               )}
 
-              <Link>
+              <Link to={`/product/${item.id}`}>
                 <img
                   className="assortment__primary-image"
                   src={item.image}
-                  alt="image"
+                  alt={item.title}
                 />
               </Link>
-              <Link>
+              <Link to={`/product/${item.id}`}>
                 <h2 className="assortment__primary-title">{item.title}</h2>
               </Link>
               <br />
-              <Link>
+              <Link to={`/product/${item.id}`}>
                 <p className="assortment__primary-desc">{item.description}</p>
               </Link>
               <br />

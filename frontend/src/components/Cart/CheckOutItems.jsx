@@ -23,6 +23,7 @@ const CheckOutItems = ({ cartItem }) => {
                 {(price * amount).toFixed(2)}
               </p>
               <RiDeleteBin5Line
+                onClick={() => dispatch(remove(cartItem))}
                 style={{ fontSize: "25px", cursor: "pointer" }}
               />
             </div>
@@ -52,7 +53,6 @@ const CheckOutItems = ({ cartItem }) => {
                 +
               </button>
             </div>
-            <button onClick={() => dispatch(remove(cartItem))}>Delete</button>
           </div>
         </div>
       </div>

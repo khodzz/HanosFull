@@ -6,6 +6,8 @@ import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import Promotions from "../pages/Promotions/Promotions";
 import PersonalPage from "../pages/PersonalPage/PersonalPage";
+import OneProduct from "../pages/OneProduct/OneProduct";
+import Admin from "../pages/Admin/Admin";
 
 const router = createBrowserRouter([
   {
@@ -35,6 +37,14 @@ const router = createBrowserRouter([
       {
         path: "personalPage",
         element: <PersonalPage />,
+      },
+      {
+        path: "product/:id",
+        element: <OneProduct />,
+      },
+      {
+        path: "admin",
+        element: <Admin />,
       },
     ],
   },
