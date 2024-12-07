@@ -79,11 +79,15 @@
     }
 
     &-text {
+      font-weight: 700;
       font-size: 18px;
       color: #fff;
       margin-left: 15px;
       background: transparent;
       border: 0;
+      &:hover {
+        text-decoration: underline 1px solid #ffffff;
+      }
     }
     &-btn {
       border: 0;

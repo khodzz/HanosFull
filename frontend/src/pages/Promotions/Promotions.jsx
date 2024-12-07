@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllProducts } from "../../store/reducers/products/products";
 import { Link } from "react-router-dom";
-import { MdFavoriteBorder } from "react-icons/md";
-import { MdOutlineFavorite } from "react-icons/md";
+
+import { add, remove } from "../../store/reducers/carts/CartSlice";
 import SortingCategory from "../../components/SortingCategory/SortingCategory";
 import "./Promotoins.scss";
 
@@ -15,7 +15,7 @@ const Promotions = () => {
   const [selectedCategory, setSelectedCategory] = useState("All"); // Выбранная категория
   const [filteredProducts, setFilteredProducts] = useState([]); // Отфильтрованные продукты
   const [sortOrder, setSortOrder] = useState(""); // Порядок сортировки (asc/desc)
-
+  const cartItems = useSelector((state) => state.cart.cartItems);
   useEffect(() => {
     dispatch(getAllProducts());
   }, [dispatch]);
@@ -78,19 +78,35 @@ const Promotions = () => {
           <div className="Promotions__primary">
             {filteredProducts.slice(0, visibleCount).map((item) => (
               <div key={item.id} className="Promotions__primary-items">
-                <MdFavoriteBorder className="Promotions__primary-icons" />
-                <MdOutlineFavorite className="Promotions__primary-icons" />
-                <Link>
+                <div>
+                  {cartItems.some((cartItem) => cartItem.id === item.id) ? (
+                    <button
+                      onClick={() => dispatch(remove({ id: item.id }))}
+                      className="Promotions__primary-button"
+                    >
+                      Убрать с корзины
+                    </button>
+                  ) : (
+                    <button
+                      onClick={() => dispatch(add(item))}
+                      className="Promotions__primary-button"
+                    >
+                      В корзину
+                    </button>
+                  )}
+                </div>
+
+                <Link to={`/product/${item.id}`}>
                   <img
                     className="Promotions__primary-image"
                     src={item.image}
                     alt="product"
                   />
                 </Link>
-                <Link>
+                <Link to={`/product/${item.id}`}>
                   <h2 className="Promotions__primary-title">{item.title}</h2>
                 </Link>
-                <Link>
+                <Link to={`/product/${item.id}`}>
                   <p className="Promotions__primary-desc">{item.description}</p>
                 </Link>
                 <Link>

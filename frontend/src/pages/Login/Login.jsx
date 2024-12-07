@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Login.scss";
 import { Link, Navigate } from "react-router-dom";
 import { MdOutlineEmail } from "react-icons/md";
@@ -15,6 +15,7 @@ const Login = () => {
     handleSubmit,
     formState: { errors },
   } = useForm({ mode: "onBlur" });
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
   const { user, status, error } = useSelector((s) => s.user);
 
@@ -70,12 +71,20 @@ const Login = () => {
                 <input
                   {...register("password", { required: true })}
                   className="login__form-input"
-                  type="password"
+                  type={isPasswordVisible ? "text" : "password"}
                   required
                   placeholder="Введите свой пароль"
                 />
-                <FaRegEye className="login__form-inputs-icons-show" />
-                <FaRegEyeSlash className="login__form-inputs-icons-hide" />
+                <div
+                  className="login__form-input-icons"
+                  onClick={() => setIsPasswordVisible(!isPasswordVisible)}
+                >
+                  {isPasswordVisible ? (
+                    <FaRegEye className="login__form-inputs-icons-show" />
+                  ) : (
+                    <FaRegEyeSlash className="login__form-inputs-icons-hide" />
+                  )}
+                </div>
               </div>
             </div>
             <div>

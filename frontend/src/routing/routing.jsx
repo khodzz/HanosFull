@@ -7,7 +7,8 @@ import Register from "../pages/Register/Register";
 import Promotions from "../pages/Promotions/Promotions";
 import PersonalPage from "../pages/PersonalPage/PersonalPage";
 import Map from "../pages/Map/Map";
-
+import OneProduct from "../pages/OneProduct/OneProduct";
+import Admin from "../pages/Admin/Admin";
 
 const router = createBrowserRouter([
   {
@@ -39,8 +40,16 @@ const router = createBrowserRouter([
         element: <PersonalPage />,
       },
       {
+        path: "product/:id",
+        element: <OneProduct />,
+      },
+      {
         path: "map",
-        element: <Map/> 
+        element: <Map/>
+      } ,
+      {
+        path: "admin",
+        element: <Admin />,
       },
     ],
   },

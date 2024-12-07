@@ -1,9 +1,10 @@
 @import "../../styles/media.scss";
-.cont{
+
+.cont {
   display: flex;
   gap: 100px;
 }
-.context{
+.context {
   display: flex;
   gap: 20px;
 }
@@ -11,97 +12,85 @@ select {
   border: none;
 }
 .Promotions {
-    padding: 20px 0;
+  padding: 20px 0;
 
-    &__cont{
-      display: flex;
-      flex-direction: column;
-      row-gap: 15px;
-    }
-    
-    &__title{
-      font-size: 4.5rem;
-      font-weight: 400;
+  &__cont {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+  }
+
+  &__title {
+    font-size: 4.5rem;
+    font-weight: 400;
+    margin-bottom: 20px;
+  }
+
+  &__founder {
+    font-size: 2rem;
+  }
+
+  &__primary {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 30px;
+
+    &-items {
       margin-bottom: 20px;
-    }
-
-    &__filter-context{
-      display: flex;
-      justify-content: space-between;
-    }
-    
-    &__founder{
-      font-size: 2rem;
-    }
-
-    &__price-filter{
-      display: flex;
-      width: 190px;
-      justify-content: space-between;
-      &_btn{
-        width: 50%;
-        background-color: none;
-        border: none;
-      }
-    }
-
-    &__primary {
-      display: flex;
-      flex-wrap: wrap;
-      column-gap: 20px;
-
-      &-items {
-        margin-bottom: 20px;
-        width: 23.45%;
-        border: 1px solid #dddddd;
-        border-radius: 10px;
-        position: relative;
-        flex-direction: column;
-        height: 340px;
-      }
-  
-      &-image {
-        width: 100%;
-        height: 60%;
-        padding: 0;
-        object-fit: contain;
-      }
-  
-      &-title {
-        padding: 10px 0 5px 25px;
-        font-size: 28px;
-        display: inline-block;
-      }
-  
-      &-desc {
-        padding: 10px 0 5px 25px;
-        font-size: 20px;
-        display: inline-block;
-      }
-  
-      &-price {
-        padding: 0px 0 0 25px;
-        font-size: 20px;
-        display: inline-block;
-      }
-  
-      &-icons {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        font-size: 25px;
-        color: red;
-      }
-    }
-    &__load-more {
-      width: 100px;
+      width: 23.45%;
+      border: 1px solid #dddddd;
+      border-radius: 10px;
       position: relative;
-      left: 50%;
-      transform: translateX(-50%);
-      padding: 10px ;
+      flex-direction: column;
+      height: 400px;
+    }
+
+    &-image {
+      width: 100%;
+      height: 60%;
+      padding: 0;
+      object-fit: contain;
+    }
+
+    &-title {
+      padding: 10px 0 5px 25px;
+      font-size: 28px;
+      display: inline-block;
+    }
+
+    &-desc {
+      padding: 10px 0 5px 25px;
+      font-size: 20px;
+      display: inline-block;
+    }
+
+    &-price {
+      padding: 0px 0 0 25px;
+      font-size: 20px;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+    &-button {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
       background: rgb(87, 0, 78);
-      color: #ffffff;
       border: 0;
-      font-size: 17px;
+      color: #ffffff;
+      padding: 10px;
+      border-radius: 5px;
     }
   }
+  &__load-more {
+    width: 100px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+    background: rgb(87, 0, 78);
+    color: #ffffff;
+    border: 0;
+    font-size: 17px;
+  }
+}

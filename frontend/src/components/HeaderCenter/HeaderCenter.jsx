@@ -58,12 +58,13 @@ const HeaderCenter = () => {
             className="header__center-right-basket"
             style={{ fontSize: "45px", color: "#fff" }}
             onClick={() => dispatch(open())} />
-            <span className="header__center-right-amount">{amount}</span>
+            
             <button
               className="header__center-right-text"
               onClick={() => dispatch(open())}
             >
-              Корзина
+              <span className="header__center-right-amount">{amount}</span>
+              <h3>Корзина</h3>
             </button>
           </div>
           <div className="header__center-right">
